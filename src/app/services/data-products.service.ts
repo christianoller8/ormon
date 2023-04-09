@@ -1,15 +1,17 @@
 import { Injectable } from "@angular/core";
 import { Product } from "../interfaces/product.interface";
+import { Observable, of } from "rxjs";
 
 @Injectable({
   providedIn: "root",
 })
-export class nombreDelServicio {
+export class dataProductsService {
   private products: Product[] = [
     {
       id: 1,
       name: "Manzana",
-      image1: "",
+      image1: "./../../assets/products/manzana.jpg",
+      image2: "./../../assets/products/manzana-producto.jpg",
       type: "Fruta",
       source: "Zaragoza",
       farmerName: "Juan",
@@ -19,7 +21,8 @@ export class nombreDelServicio {
     {
       id: 2,
       name: "Pera",
-      image1: "",
+      image1: "./../../assets/products/pera.jpg",
+      image2: "./../../assets/products/pera-producto.jpg",
       type: "Fruta",
       source: "Andalucía",
       farmerName: "Pedro",
@@ -29,7 +32,8 @@ export class nombreDelServicio {
     {
       id: 3,
       name: "Naranja",
-      image1: "",
+      image1: "./../../assets/products/naranja.jpg",
+      image2: "./../../assets/products/naranja-producto.jpg",
       type: "Fruta",
       source: "Valencia",
       farmerName: "Luis",
@@ -39,7 +43,8 @@ export class nombreDelServicio {
     {
       id: 4,
       name: "Guisantes",
-      image1: "",
+      image1: "./../../assets/products/guisantes.jpg",
+      image2: "./../../assets/products/guisantes-producto.jpg",
       type: "Verdura",
       source: "Castilla la Mancha",
       farmerName: "Rosa",
@@ -49,7 +54,8 @@ export class nombreDelServicio {
     {
       id: 5,
       name: "Espárragos",
-      image1: "",
+      image1: "./../../assets/products/esparragos.jpg",
+      image2: "./../../assets/products/esparragos-producto.jpg",
       type: "Verdura",
       source: "Cataluña",
       farmerName: "Marta",
@@ -59,7 +65,8 @@ export class nombreDelServicio {
     {
       id: 6,
       name: "Brócoli",
-      image1: "",
+      image1: "./../../assets/products/brocoli.jpg",
+      image2: "./../../assets/products/brocoli-producto.jpg",
       type: "Verdura",
       source: "Galicia",
       farmerName: "Antonio",
@@ -70,5 +77,9 @@ export class nombreDelServicio {
 
   getProducts() {
     return this.products;
+  }
+  getProduct(id: number): Observable<Product> {
+    const product = this.products.find((h) => h.id === id)!;
+    return of(product);
   }
 }
