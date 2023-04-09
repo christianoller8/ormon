@@ -3,6 +3,7 @@ export interface Product {
   id: number;
   name: string;
   image1: string;
+  image2: string;
   type: string;
   source: string;
   farmerName: string;

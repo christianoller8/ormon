@@ -1,0 +1,125 @@
+/* Seleccionamos todos los elementos de la página y les aplicamos la fuente "Alkatra" */
+* {
+  font-family: "Arial", cursive;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 150px;
+  font-size: 50px;
+  color: #12c50c;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #f4d03f, #2ecc71);
+}
+
+/* Definimos un contenedor que va a centrar el contenido en la página usando flexbox */
+.center-container {
+  display: flex;
+  justify-content: center; /* Centramos horizontalmente */
+  align-items: flex-start; /* Centramos verticalmente */
+  height: 100vh; /* Le damos altura al contenedor para que ocupe el 100% del alto de la ventana */
+}
+
+/* Definimos un contenedor para las imágenes, que usará flexbox para centrarlas */
+.image-container {
+  display: flex;
+  flex-wrap: wrap; /* Envuelve los elementos en varias líneas si no caben en una sola */
+  justify-content: center; /* Centramos horizontalmente */
+  margin: 0 auto; /* Ajustamos el margen automático para centrar el contenedor en la página */
+}
+
+/* Definimos un contenedor para cada imagen, con algunas propiedades para su posición y tamaño */
+.image-wrapper {
+  position: relative; /* Permite posicionar elementos hijos de forma relativa a este contenedor */
+  margin: 10px; /* Añadimos margen para separar cada imagen */
+  width: 80%; /* Le damos un ancho del 80% del contenedor padre */
+  height: 100%; /* Le damos una altura del 100% del contenedor padre */
+  overflow: hidden; /* Evita que el contenido desborde del contenedor */
+}
+
+/* Definimos un cuadro de texto que aparecerá en la parte inferior de cada imagen */
+.product-text {
+  position: absolute; /* Lo posicionamos de forma absoluta dentro del contenedor de la imagen */
+  bottom: -65px; /* Ajustamos la distancia hacia arriba para que quede oculto por defecto */
+  left: 0; /* Lo ajustamos a la izquierda del contenedor */
+  width: 100%; /* Le damos el ancho del contenedor padre */
+  padding: 30px 0; /* Añadimos padding para darle tamaño */
+  background: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Establecemos un fondo oscuro semitransparente */
+  color: white; /* Le damos color blanco al texto */
+  font-size: 17px; /* Le damos tamaño de fuente */
+  text-align: center; /* Centramos el texto */
+  transform: translateY(
+    100%
+  ); /* Lo ocultamos por defecto moviéndolo hacia abajo */
+  transition: transform 0.3s ease-in-out; /* Añadimos una transición de animación al aparecer */
+}
+
+/* Cuando el usuario pase el ratón sobre la imagen, se muestra el cuadro de texto */
+.image-wrapper:hover .product-text {
+  transform: translateY(
+    -100%
+  ); /* Movemos el cuadro de texto hacia arriba para que se muestre */
+}
+
+.product-image {
+  max-width: 100%; /* La imagen se ajusta al ancho máximo del contenedor */
+  height: auto; /* La altura de la imagen se ajusta proporcionalmente al ancho */
+  border-radius: 10px; /* La imagen tiene bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3); /* La imagen tiene una sombra difusa */
+  filter: grayscale(100%); /* La imagen se muestra en escala de grises */
+  transition: filter 0.5s; /* Se agrega una transición de 0.5 segundos a la propiedad filter */
+}
+
+.image-wrapper:hover .product-image {
+  filter: grayscale(
+    0%
+  ); /* Al pasar el cursor sobre la imagen, se quita la escala de grises */
+}
+
+.button {
+  box-shadow: inset 0 1px 0 0 #ffffff; /* Se agrega una sombra interna al botón */
+  background: #ffffff linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%); /* Se define un fondo para el botón */
+  border-radius: 6px; /* Se dan bordes redondeados al botón */
+  border: 1px solid #dcdcdc; /* Se agrega un borde sólido al botón */
+  display: inline-block; /* Se define el botón como elemento en línea */
+  cursor: pointer; /* Se cambia el cursor al pasar por encima del botón */
+  color: #666666; /* Se define el color del texto del botón */
+  font-family: Arial, sans-serif; /* Se define la fuente del texto del botón */
+  font-size: 15px; /* Se define el tamaño del texto del botón */
+  font-weight: bold; /* Se define el grosor del texto del botón */
+  padding: 6px 24px; /* Se define el relleno del botón (arriba/abajo, izquierda/derecha) */
+  text-decoration: none; /* Se quita la decoración de texto por defecto */
+  text-shadow: 0 1px 0 #ffffff; /* Se agrega una sombra al texto del botón */
+  outline: 0; /* Se quita el contorno al hacer clic en el botón */
+}
+
+.activatebutton {
+  box-shadow: inset 0 1px 0 0 #dcecfb; /* Se agrega una sombra interna al botón activado */
+  background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #0a6fd4 100%); /* Se define un fondo para el botón activado */
+  border: 1px solid #84bbf3; /* Se agrega un borde sólido al botón activado */
+  color: #ffffff; /* Se define el color del texto del botón activado */
+  text-shadow: 0 1px 0 #528ecc; /* Se agrega una sombra al texto del botón activado */
+}
+
+@media only screen and (max-width: 768px) {
+  .image-wrapper {
+    width: 45%; /* Cuando el ancho de la pantalla es menor a 768px, el ancho de las imágenes se reduce */
+  }
+  .center-container {
+    flex-direction: column; /* Cuando el ancho de la pantalla es menor a 768px, los elementos del contenedor se apilan verticalmente */
+    align-items: center; /* Se centran los elementos del contenedor verticalmente */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .image-wrapper {
+    width: 90%; /* Cuando el ancho de la pantalla es menor a 480px, el ancho de las imágenes se reduce aún más */
+  }
+}
