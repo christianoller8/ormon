@@ -1,0 +1,25 @@
+body {
+  background-image: linear-gradient(to bottom, #f4d03f, #2ecc71);
+}
+
+h2,
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 35px;
+  color: #12c50c;
+}
+
+img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

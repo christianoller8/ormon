@@ -20,7 +20,7 @@ const routes: Routes = [
         component: WelcomePageComponent,
       },
       {
-        path: "products-page",
+        path: "products",
         data: {
           breadcrumb: "Products",
         },
