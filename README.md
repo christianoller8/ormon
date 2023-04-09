@@ -44,6 +44,8 @@ I hope you enjoy watching it as much as I have enjoyed creating it, thank you ve
 
 ### Deployed on Vercel
 
+https://ormon-christianoller8.vercel.app/
+
 ### Development server
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.3.
