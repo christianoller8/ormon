@@ -1,6 +1,46 @@
-<div>
-  <img src="{{ product.image2 }}" alt="{{ product.name }}" />
-  <p>{{ product.name }}</p>
-</div>
-
-<p>Productos</p>
+<body>
+  <h2>Caracteristicas de {{ product.name }}</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="{{ product.image2 }}" alt="{{ product.name }}" />
+      </div>
+      <div class="col-sm-6">
+        <table>
+          <thead>
+            <tr>
+              <th>Categoría</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nombre</td>
+              <td>{{ product.name }}</td>
+            </tr>
+            <tr>
+              <td>Tipo</td>
+              <td>{{ product.type }}</td>
+            </tr>
+            <tr>
+              <td>Procedencia</td>
+              <td>{{ product.source }}</td>
+            </tr>
+            <tr>
+              <td>Nombre Agricultor</td>
+              <td>{{ product.farmerName }}</td>
+            </tr>
+            <tr>
+              <td>Tiempo Maduración</td>
+              <td>{{ product.madurationTime }}</td>
+            </tr>
+            <tr>
+              <td>Precio (Kg)</td>
+              <td>{{ product.priceKg }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
