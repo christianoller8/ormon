@@ -1,20 +1,20 @@
-<body>
-  <h2>Nuestros productos locales</h2>
-  <div class="center-container">
-    <div class="image-container" *ngFor="let product of products" [@fadeInOut]>
-      <div class="image-wrapper">
+<h2>Nuestros productos locales</h2>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <ng-container *ngFor="let product of products">
+      <div class="col card">
         <a routerLink="{{ product.id }}/product-characteristics">
           <img
-            class="product-image"
             [src]="product.image1"
+            class="card-img-top"
             alt="{{ product.name }}"
           />
         </a>
-        <div class="product-text">
-          {{ product.name }} -
-          {{ product.type }}
+        <div class="card-body">
+          <p class="card-text">{{ product.name }}</p>
         </div>
       </div>
-    </div>
+    </ng-container>
   </div>
-</body>
+</div>

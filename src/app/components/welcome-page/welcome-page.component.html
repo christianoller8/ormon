@@ -1,8 +1,16 @@
 <body>
-  <h2>BIENVENIDOS A ORMON ESPAÑA</h2>
-  <h3>Empresa de Logística de Mercaderías de productos Ecológicos</h3>
+  <h2>{{ "Saludo" | translate }}</h2>
+  <div class="buttons">
+    <button routerLink="/products" type="button" class="btn btn-success">
+      {{ "Productos" | translate }}
+    </button>
+    <button routerLink="/trucks" type="button" class="btn btn-success">
+      {{ "Camiones" | translate }}
+    </button>
+  </div>
+  <h3>{{ "Empresa" | translate }}"</h3>
 
   <div class="center-container">
-    <img routerLink="/products" src="./../../../assets/logo.png" alt="logo" />
+    <img src="./../../../assets/logo.png" alt="logo" />
   </div>
 </body>

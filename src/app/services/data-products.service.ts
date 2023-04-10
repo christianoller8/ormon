@@ -73,6 +73,28 @@ export class dataProductsService {
       madurationTime: 30,
       priceKg: 1.5,
     },
+    {
+      id: 7,
+      name: "Platano",
+      image1: "./../../assets/products/platano.jpg",
+      image2: "./../../assets/products/brocoli-producto.jpg",
+      type: "Fruta",
+      source: "Canarias",
+      farmerName: "Mi primo",
+      madurationTime: 60,
+      priceKg: 2.5,
+    },
+    {
+      id: 8,
+      name: "Cebolla",
+      image1: "./../../assets/products/cebolla.jpg",
+      image2: "./../../assets/products/brocoli-producto.jpg",
+      type: "Hortaliza",
+      source: "Murcia",
+      farmerName: "Mi prima",
+      madurationTime: 20,
+      priceKg: 1.2,
+    },
   ];
 
   getProducts() {

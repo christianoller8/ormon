@@ -27,3 +27,18 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
+}
