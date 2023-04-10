@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = 'ormon-spain';
+  title = "ormon-spain";
+
+  constructor(public translate: TranslateService) {
+    translate.addLangs(["en", "es"]);
+    translate.setDefaultLang("en");
+  }
+
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
+  }
 }

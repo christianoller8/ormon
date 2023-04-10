@@ -5,6 +5,10 @@ import { WelcomePageComponent } from "./components/welcome-page/welcome-page.com
 import { ProductsPageComponent } from "./components/products-page/products-page.component";
 import { ProductCharacteristicsComponent } from "./components/product-characteristics/product-characteristics.component";
 
+import { TrucksPageComponent } from "./components/trucks-page/trucks-page.component";
+import { TrucksCharacteristicsComponent } from "./components/trucks-characteristics/trucks-characteristics.component";
+import { PagenotfoundComponent } from "./components/pagenotfound/pagenotfound.component";
+
 const routes: Routes = [
   {
     path: "",
@@ -49,7 +53,41 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: "trucks",
+        data: {
+          breadcrumb: "Trucks",
+        },
+        children: [
+          {
+            path: "",
+            data: {
+              breadcrumb: null,
+            },
+            component: TrucksPageComponent,
+          },
+          {
+            path: ":id/trucks-characteristics",
+            data: {
+              breadcrumb: "Characteristics",
+            },
+            children: [
+              {
+                path: "",
+                data: {
+                  breadcrumb: null,
+                },
+                component: TrucksCharacteristicsComponent,
+              },
+            ],
+          },
+        ],
+      },
     ],
+  },
+  {
+    path: "**",
+    component: PagenotfoundComponent,
   },
 ];
 
