@@ -28,10 +28,6 @@ I hope you enjoy watching it as much as I have enjoyed creating it, thank you ve
 
 ![Home-Page](./src/assets/screenshot1.png)
 
-#### Product Page
-
-![Home-Page](./src/assets/screenshot2.png)
-
 #### Characteristics Page
 
 ![Home-Page](./src/assets/screenshot3.png)
